@@ -1,15 +1,15 @@
-# Project: Project1
+# Project: studentManageSystem
 # Makefile created by Dev-C++ 5.11
 
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = 
-LINKOBJ  = 
+OBJ      = stu.o md5.o tools.o mian.o
+LINKOBJ  = stu.o md5.o tools.o mian.o
 LIBS     = -L"D:/DEVCPP/Dev-Cpp/MinGW64/lib" -L"D:/DEVCPP/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
 INCS     = -I"D:/DEVCPP/Dev-Cpp/MinGW64/include" -I"D:/DEVCPP/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/DEVCPP/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"D:/DEVCPP/Dev-Cpp/MinGW64/include" -I"D:/DEVCPP/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/DEVCPP/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/DEVCPP/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
-BIN      = Project1.exe
+BIN      = studentManageSystem.exe
 CXXFLAGS = $(CXXINCS) 
 CFLAGS   = $(INCS) 
 RM       = rm.exe -f
@@ -23,3 +23,15 @@ clean: clean-custom
 
 $(BIN): $(OBJ)
 	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+stu.o: stu.c
+	$(CC) -c stu.c -o stu.o $(CFLAGS)
+
+md5.o: md5.c
+	$(CC) -c md5.c -o md5.o $(CFLAGS)
+
+tools.o: tools.c
+	$(CC) -c tools.c -o tools.o $(CFLAGS)
+
+mian.o: mian.c
+	$(CC) -c mian.c -o mian.o $(CFLAGS)
